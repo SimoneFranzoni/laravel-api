@@ -4,7 +4,12 @@
 <div class="container">
 
   <h1> {{ $post->title }}  </h1> 
-  <span class="badge bg-success"> {{ $post->category->name }} </span>
+  <span class="badge bg-warning"> {{ $post->category->name }} </span>
+
+  @foreach ($post->tags as $tag)   
+    <span class="badge bg-success"> {{ $tag->name }} </span>
+  @endforeach
+
     
   <p> {{ $post->content }} </p>
 
